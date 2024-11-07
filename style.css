@@ -18,15 +18,15 @@ body {
     list-style: none;
     text-transform: uppercase;
     position: absolute;
-    top: 20px;
+    top: 1px;
     left: 1000px;
   }
   
   nav#jorge li {
     display: inline-block;
     background-color: #ffa39c;
-    padding: 10px;
-    margin: 2px;
+    padding: 14px;
+    margin: 15px;
     border-radius: 15px
   }
   
@@ -36,6 +36,7 @@ body {
   
   nav#jorge {
     display: block;
+    
   }
   
   nav#jorge li:hover {
@@ -269,7 +270,7 @@ body {
 
   .carrinho {
     background-color: #ffa39c;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
