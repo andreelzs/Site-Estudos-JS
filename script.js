@@ -1,28 +1,23 @@
-// Exibe a notificação de promoção após 2 segundos
-setTimeout(function() {
-    document.getElementById('promo-banner').style.display = 'block';
-  }, 2000);
+// Inicializando o número de itens no carrinho e o carrinho
+let itensNoCarrinho = 0;
+let carrinho = [];
 
-  // Fecha a notificação quando o botão for clicado
-  document.getElementById('close-promo').addEventListener('click', function() {
-    document.getElementById('promo-banner').style.display = 'none';
-  });
+// Função para atualizar o número de itens no carrinho no botão de carrinho
+function atualizarQuantidadeCarrinho() {
+    document.getElementById('quantidadeCarrinho').innerText = itensNoCarrinho;
+}
 
+// Função para adicionar um produto ao carrinho
+function adicionarAoCarrinho(nomeProduto) {
+    // Adiciona o produto ao carrinho
+    carrinho.push(nomeProduto);
 
+    // Incrementa o contador de itens no carrinho
+    itensNoCarrinho++;
 
-  //Validação do formulário
-   document.getElementById('checkout-form').addEventListener('submit', function(event) {
-    event.preventDefault();  // Previne o envio do formulário
+    // Atualiza o número de itens no carrinho
+    atualizarQuantidadeCarrinho();
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const card = document.getElementById('card').value;
-
-    if (!name || !email || !card) {
-      document.getElementById('form-message').textContent = 'Por favor, preencha todos os campos.';
-      document.getElementById('form-message').style.color = 'red';
-    } else {
-      document.getElementById('form-message').textContent = 'Compra realizada com sucesso!';
-      document.getElementById('form-message').style.color = 'green';
-    }
-  });
+    // Exibe o carrinho no console para teste
+    console.log('Carrinho:', carrinho);
+}

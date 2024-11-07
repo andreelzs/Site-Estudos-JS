@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
-    </style>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nippofun</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <script src="script.js"></script>
 </head>
-
 <body>
     <header>
         <div class="maicon">
             <div class="logo">
                 <a href="index.html">
-                <img src="logo.png.png" alt="Logo do site">
+                    <img src="logo.png.png" alt="Logo do site">
+                </a>
             </div>
 
             <nav id="jorge">
@@ -26,10 +22,12 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="livros.html">Livros</a></li>
                     <li><a href="contato.html">Contato</a></li>
-                    <li><button class="carrinho" onclick="window.location.href='carrinho.html'">
-                        <i class="fas fa-shopping-cart"></i> Carrinho
-                        <span class="quantidade" id="quantidadeCarrinho">0</span>
-                      </button></li>
+                    <li>
+                        <button class="carrinho" onclick="window.location.href='carrinho.html'">
+                            <i class="fas fa-shopping-cart"></i> Carrinho
+                            <span class="quantidade" id="quantidadeCarrinho">0</span>
+                        </button>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -40,19 +38,13 @@
             <h2>Descubra Novos Mundos</h2>
             <p>Explore nossa vasta coleção de livros dos mais diversos gêneros.</p>
             <p>Reservamos nosso tempo e espaço dedicado única e exclusivamente para os amantes de livros e mangás!</p>
-
             <br><br>
             <a href="livros.html" class="botao-link">Clique para conferir nossos produtos</a>
-
         </div>
     </section>
 
-    <div id="promo-banner" style="display: none; background-color: #ffcc00; padding: 10px; text-align: center;">
-        <p>Promoção! 20% de desconto em todos os produtos! <button id="close-promo">Fechar</button></p>
-      </div>
- 
-     <footer>
-            <p>&copy; Direitos Reservados a Nippofun Int.</p>
-        </div>
-     </footer>
+    <footer>
+        <p>&copy; Direitos Reservados a Nippofun Int.</p>
+    </footer>
 </body>
+</html>
