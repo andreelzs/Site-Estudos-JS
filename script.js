@@ -53,3 +53,7 @@ function removerDoCarrinho(index) {
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
     exibirCarrinho();
 }
+
+function alertaConcluirCompra(){
+    alert("Sua compra foi concluída com sucesso")
+}
