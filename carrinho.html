@@ -35,7 +35,8 @@
         <h1>Carrinho de Compras</h1>
         <br>
         <button class="botao-voltar" onclick="window.location.href='livros.html'">Voltar ao Catálogo</button>
-        <br>
+        <br><br> <button class="botao-concluir" onclick="concluirCompra()">Concluir compra</button>
+        <br><br>
 
         <section id="carrinhoContainer">
             <!-- Mensagem de carrinho vazio -->
@@ -44,7 +45,6 @@
             <!-- Produtos do carrinho serão exibidos aqui dinamicamente -->
         </section>
         <br><br>
-        <button class="botao-concluir" onclick="alertaConcluirCompra()">Concluir compra</button>
     <script>
         // Exibe o conteúdo do carrinho ao carregar a página
         document.addEventListener('DOMContentLoaded', exibirCarrinho);

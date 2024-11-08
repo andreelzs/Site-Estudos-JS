@@ -18,15 +18,15 @@ body {
     list-style: none;
     text-transform: uppercase;
     position: absolute;
-    top: 1px;
+    top: 20px;
     left: 1000px;
   }
   
   nav#jorge li {
     display: inline-block;
     background-color: #ffa39c;
-    padding: 14px;
-    margin: 15px;
+    padding: 10px;
+    margin: 2px;
     border-radius: 15px
   }
   

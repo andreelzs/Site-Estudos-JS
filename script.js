@@ -1,9 +1,10 @@
-// Inicializando o carrinho a partir do localStorage
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
-// Atualiza o número de itens no carrinho
 let itensNoCarrinho = carrinho.length;
-atualizarQuantidadeCarrinho();
+
+window.onload = function () {
+    atualizarQuantidadeCarrinho();
+    exibirCarrinho();
+};
 
 function atualizarQuantidadeCarrinho() {
     document.getElementById('quantidadeCarrinho').innerText = itensNoCarrinho;
@@ -13,16 +14,12 @@ function adicionarAoCarrinho(nomeProduto) {
     // Adiciona o produto ao carrinho
     carrinho.push(nomeProduto);
 
-    // Incrementa o contador de itens no carrinho
     itensNoCarrinho++;
 
-    // Atualiza o número de itens no carrinho
     atualizarQuantidadeCarrinho();
-
-    // Salva o carrinho no localStorage
+    
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-    // Exibe o carrinho no console para teste
     console.log('Carrinho:', carrinho);
 }
 
@@ -45,7 +42,6 @@ function exibirCarrinho() {
     }
 }
 
-// Função para remover um item do carrinho
 function removerDoCarrinho(index) {
     carrinho.splice(index, 1);
     itensNoCarrinho--;
@@ -54,6 +50,21 @@ function removerDoCarrinho(index) {
     exibirCarrinho();
 }
 
-function alertaConcluirCompra(){
-    alert("Sua compra foi concluída com sucesso")
+function concluirCompra() {
+    if (itensNoCarrinho === 0) {
+        alert("Compra não concluída, seu carrinho está vazio.");
+    } else {
+        alert("Compra concluída com sucesso!");
+
+        // Esvaziar o carrinho
+        carrinho = [];
+        itensNoCarrinho = 0;
+
+        // Atualizar localStorage
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+        // Atualizar interface
+        atualizarQuantidadeCarrinho();
+        exibirCarrinho();
+    }
 }
