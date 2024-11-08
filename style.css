@@ -302,3 +302,57 @@ body {
     font-size: 14px;
   }
 
+  #carrinhoContainer {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#carrinhoContainer p {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.carrinho-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.carrinho-item:last-child {
+    border-bottom: none;
+}
+
+.carrinho-item p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.carrinho-item button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carrinho-item button:hover {
+    background-color: #c82333;
+}
+
+/* Estilo para o carrinho vazio */
+#carrinhoContainer p {
+    font-size: 1.2rem;
+    color: #777;
+    margin-top: 20px;
+}
