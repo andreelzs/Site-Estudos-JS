@@ -35,6 +35,14 @@
         <h1>Carrinho de Compras</h1>
         <br>
         <button class="botao-voltar" onclick="window.location.href='livros.html'">Voltar ao Catálogo</button>
+        
+        <div id="calculoFrete">
+            <label for="cep">Digite seu CEP:</label>
+            <input type="text" id="cep" maxlength="8" placeholder="Ex: 12345678">
+            <button onclick="calcularFrete()">Calcular Frete</button>
+            <p id="valorFrete"></p>
+        </div>
+        
         <br><br> <button class="botao-concluir" onclick="concluirCompra()">Concluir compra</button>
         <br><br>
 
