@@ -14,6 +14,37 @@ body {
     height: auto;/
   }
   
+  .hero {
+    background-image: url('manga-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.hero .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.hero h2, p {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+
   nav#jorge ul {
     list-style: none;
     text-transform: uppercase;
@@ -255,13 +286,13 @@ body {
 
   .botao-link {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 20px 30px;
     background-color: #ffa39c;
     color: white;
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 30px;
   }
 
   .botao-link:hover {
@@ -440,28 +471,75 @@ body {
 
 
 
-.carrossel {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
 
-.imagens-carrossel {
+.promo-alert {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza o alerta na tela */
+  background-color: #dbca0c;
+  color: rgb(0, 0, 0);
+  padding: 20px 30px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  justify-content: space-between;
+  align-items: center;
+  visibility: hidden; /* Inicia oculto */
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.imagens-carrossel img {
-  width: 1920px; /* Define a largura das imagens para ocupar toda a largura da viewport */
-  height: 1080px; /* Opcional: define altura das imagens para ocupar toda a altura da viewport */
-  object-fit: cover; /* Ajusta a imagem para cobrir o espaço sem distorcer */
+.promo-alert.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(20px); /* Ativa o movimento para baixo */
 }
 
-.anterior {
-  left: 20px;
+@keyframes slideDownFade {
+  from {
+      transform: translateX(-50%) translateY(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(-50%) translateY(20px);
+      opacity: 1;
+  }
+}
+.promo-message {
+  flex: 1;
+  padding-right: 20px;
 }
 
-.proximo {
-  right: 20px;
+.close-btn {
+  background-color: transparent;
+  border: none;
+  color: rgb(255, 0, 0);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.close-btn:hover {
+  color: #902e2e;
+}
+
+.pesquisa-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#barraPesquisa {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#barraPesquisa::placeholder {
+  color: #888; /* Muda a cor do placeholder */
+  opacity: 1;  /* Garantir que o placeholder seja visível */
 }

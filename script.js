@@ -86,50 +86,39 @@ function calcularFrete() {
     }
 }
 
-
-// let indiceAtual = 0;
-// const imagens = document.querySelectorAll('.imagens-carrossel img');
-// const totalImagens = imagens.length;
-
-// function mostrarImagem(indice) {
-//   const deslocamento = -indice * 100;
-//   document.querySelector('.imagens-carrossel').style.transform = `translateX(${deslocamento}%)`;
-// }
-
-// function proximaImagem() {
-//   indiceAtual = (indiceAtual + 1) % totalImagens;
-//   mostrarImagem(indiceAtual);
-// }
-
-// function imagemAnterior() {
-//   indiceAtual = (indiceAtual - 1 + totalImagens) % totalImagens;
-//   mostrarImagem(indiceAtual);
-// }
-
-// setInterval(proximaImagem, 3000); // Muda a imagem a cada 3 segundos
+function fecharAlerta() {
+    document.getElementById("promoAlert").style.display = "none";
+}
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    let indiceAtual = 0;
-    const imagens = document.querySelectorAll('.imagens-carrossel img');
-    const totalImagens = imagens.length;
-  
-    function mostrarImagem(indice) {
-      const deslocamento = -indice * 100;
-      document.querySelector('.imagens-carrossel').style.transform = `translateX(${deslocamento}%)`;
-    }
-  
-    window.proximaImagem = function () {
-      indiceAtual = (indiceAtual + 1) % totalImagens;
-      mostrarImagem(indiceAtual);
-    }
-  
-    window.imagemAnterior = function () {
-      indiceAtual = (indiceAtual - 1 + totalImagens) % totalImagens;
-      mostrarImagem(indiceAtual);
-    }
-  
-    setInterval(proximaImagem, 3000); // Muda a imagem a cada 3 segundos
-  });
-  
+// Função para exibir o alerta de promoção
+function exibirAlertaPromocao() {
+    const promoAlert = document.getElementById("promoAlert");
+    promoAlert.classList.add("show"); 
+}
 
+// Atraso de 3 segundos para mostrar o alerta de promoção
+window.onload = function() {
+    setTimeout(exibirAlertaPromocao, 3000);
+};
+
+// Função para fechar o alerta
+function fecharAlerta() {
+    const promoAlert = document.getElementById("promoAlert");
+    promoAlert.classList.remove("show"); // Remove a classe para ocultar o alerta
+}
+
+function filtrarProdutos() {
+    const input = document.getElementById("barraPesquisa").value.toLowerCase();
+    const produtos = document.querySelectorAll(".produto-card");
+
+    produtos.forEach(produto => {
+        const titulo = produto.querySelector("h2").textContent.toLowerCase();
+        
+        if (titulo.includes(input)) {
+            produto.style.display = "block";
+        } else {
+            produto.style.display = "none";
+        }
+    });
+}
