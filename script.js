@@ -120,3 +120,8 @@ function exibirAlertaCarrinho() {
         addCarrinho.classList.remove("show");
     }, 3000);
 }
+
+function fecharAlertaCarrinho() {
+    const addCarrinho = document.getElementById("addCarrinho");
+    addCarrinho.classList.remove("show"); // Remove a classe para ocultar o alerta
+}
