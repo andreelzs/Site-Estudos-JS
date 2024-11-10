@@ -1,3 +1,4 @@
+console.log("JavaScript carregado");
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 let itensNoCarrinho = carrinho.length;
 
@@ -5,6 +6,12 @@ window.onload = function () {
     atualizarQuantidadeCarrinho();
     exibirCarrinho();
 };
+
+window.onload = function() {
+    setTimeout(exibirAlertaPromocao, 3000);
+    console.log('aaaaaaaaaa');
+};
+
 
 function atualizarQuantidadeCarrinho() {
     document.getElementById('quantidadeCarrinho').innerText = itensNoCarrinho;
@@ -79,18 +86,11 @@ function calcularFrete() {
     }
 }
 
-function fecharAlerta() {
-    document.getElementById("promoAlert").style.display = "none";
-}
-
 function exibirAlertaPromocao() {
     const promoAlert = document.getElementById("promoAlert");
     promoAlert.classList.add("show"); 
 }
 
-window.onload = function() {
-    setTimeout(exibirAlertaPromocao, 3000);
-};
 
 function fecharAlerta() {
     const promoAlert = document.getElementById("promoAlert");
