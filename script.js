@@ -11,7 +11,6 @@ function atualizarQuantidadeCarrinho() {
 }
 
 function adicionarAoCarrinho(nomeProduto) {
-    // Adiciona o produto ao carrinho
     carrinho.push(nomeProduto);
 
     itensNoCarrinho++;
@@ -55,15 +54,11 @@ function concluirCompra() {
         alert("Compra não concluída, seu carrinho está vazio.");
     } else {
         alert("Compra concluída com sucesso!");
-
-        // Esvaziar o carrinho
         carrinho = [];
         itensNoCarrinho = 0;
 
-        // Atualizar localStorage
         localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-        // Atualizar interface
         atualizarQuantidadeCarrinho();
         exibirCarrinho();
     }
@@ -74,14 +69,13 @@ function calcularFrete() {
     const cep = document.getElementById('cep').value;
     const valorFrete = document.getElementById('valorFrete');
     
-    // Validação do formato do CEP
     const cepValido = /^[0-9]{8}$/.test(cep);  // Regex para validar CEP com exatamente 8 dígitos numéricos
     
     if (!cepValido) {
         valorFrete.innerText = 'Por favor, insira um CEP válido (8 dígitos numéricos).';
     } else {
-        // Simulando cálculo de frete
-        const valor = Math.random() * 20 + 5; // Valor fictício de frete entre 5 e 25
+
+        const valor = Math.random() * 20 + 5;
         valorFrete.innerText = `Frete: R$ ${valor.toFixed(2)}`;
     }
 }
@@ -90,19 +84,15 @@ function fecharAlerta() {
     document.getElementById("promoAlert").style.display = "none";
 }
 
-
-// Função para exibir o alerta de promoção
 function exibirAlertaPromocao() {
     const promoAlert = document.getElementById("promoAlert");
     promoAlert.classList.add("show"); 
 }
 
-// Atraso de 3 segundos para mostrar o alerta de promoção
 window.onload = function() {
     setTimeout(exibirAlertaPromocao, 3000);
 };
 
-// Função para fechar o alerta
 function fecharAlerta() {
     const promoAlert = document.getElementById("promoAlert");
     promoAlert.classList.remove("show"); // Remove a classe para ocultar o alerta
@@ -121,4 +111,12 @@ function filtrarProdutos() {
             produto.style.display = "none";
         }
     });
+}
+
+function exibirAlertaCarrinho() {
+    const addCarrinho = document.getElementById("addCarrinho");
+    addCarrinho.classList.add("show"); 
+    setTimeout(() => {
+        addCarrinho.classList.remove("show");
+    }, 3000);
 }
