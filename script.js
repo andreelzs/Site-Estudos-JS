@@ -14,7 +14,6 @@ function adicionarAoCarrinho(nomeProduto) {
     carrinho.push(nomeProduto);
 
     itensNoCarrinho++;
-
     atualizarQuantidadeCarrinho();
     
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
@@ -125,3 +124,10 @@ function fecharAlertaCarrinho() {
     const addCarrinho = document.getElementById("addCarrinho");
     addCarrinho.classList.remove("show"); // Remove a classe para ocultar o alerta
 }
+
+window.onload = function() {
+    carrinho = JSON.parse(localStorage.getItem('carrinho')) || []; 
+    itensNoCarrinho = carrinho.length; 
+    atualizarQuantidadeCarrinho(); 
+    exibirCarrinho(); 
+};
