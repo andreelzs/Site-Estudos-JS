@@ -25,11 +25,6 @@ body {
     margin-top: 130px
 }
 
-  .logo {
-    width: 200px;
-    height: auto;/
-  }
-  
   .hero {
     background-image: url('manga-hero.jpg');
     background-size: cover;
@@ -60,7 +55,7 @@ body {
   border-radius: 8px;
 }
 
-  nav#jorge ul {
+  nav#listaHeader ul {
     list-style: none;
     text-transform: uppercase;
     position: absolute;
@@ -68,7 +63,7 @@ body {
     left: 1000px;
   }
   
-  nav#jorge li {
+  nav#listaHeader li {
     display: inline-block;
     background-color: #ffa39c;
     padding: 10px;
@@ -76,32 +71,32 @@ body {
     border-radius: 15px
   }
   
-  nav#jorge h1 {
+  nav#listaHeader h1 {
     display: none;
   }
   
-  nav#jorge {
+  nav#listaHeader {
     display: block;
     
   }
   
-  nav#jorge li:hover {
+  nav#listaHeader li:hover {
     background-color: #986561;
     transition: background-color 1s;
   }
   
-  nav#jorge a {
+  nav#listaHeader a {
     color: #000000;
     text-decoration: none;
   }
   
-  nav#jorge a:hover {
+  nav#listaHeader a:hover {
     color: #ffffff;
     text-decoration: underline;
   }
   
   
-  .maicon {
+  .logo1 {
     max-width: 500px;
     margin: 0px auto;
   }
