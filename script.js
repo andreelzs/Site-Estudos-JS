@@ -94,7 +94,7 @@ function exibirAlertaPromocao() {
 
 function fecharAlerta() {
     const promoAlert = document.getElementById("promoAlert");
-    promoAlert.classList.remove("show"); // Remove a classe para ocultar o alerta
+    promoAlert.classList.remove("show"); 
 }
 
 function filtrarProdutos() {
@@ -105,7 +105,7 @@ function filtrarProdutos() {
         const titulo = produto.querySelector("h2").textContent.toLowerCase();
         
         if (titulo.includes(input)) {
-            produto.style.display = "block";
+            produto.style.display = "flex";
         } else {
             produto.style.display = "none";
         }
